@@ -17,4 +17,12 @@ function cerraConexion() {
     $pdo = null;
 }
 
+
+function ConexionMysqli(){
+    $conexionMysqli=mysqli_connect('localhost', 'root', '', 'blog_master');
+mysqli_query($conexionMysqli, "chart utf-8");
+return $conexionMysqli;
+}
+
+
 ?>

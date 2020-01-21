@@ -1,7 +1,17 @@
 <?php
+require_once './procesos_php/VerificarUser.php';
+
+session_start();
 require_once './includes/header.php';
+
 require_once './includes/sidebar.php';
+
+if(isset($_SESSION)){
+    var_dump($_SESSION);
+}
+
 ?>
+<div class="content-wrapper">
 <div class="card-body">
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
@@ -39,3 +49,4 @@ require_once './includes/sidebar.php';
             <?php
 require_once './includes/footer.php';
             ?>
+</div>

@@ -1,3 +1,18 @@
+<?php
+require_once './procesos_php/VerificarUser.php';
+require_once './procesos_php/VerificarUser.php';
+if(!isset($_SESSION['datos'])){
+    if(!empty(verificarDatos())){
+    $datosUser=$_SESSION['datos'];
+    $nombre=$datosUser['nombre'];
+    $apellidos=$datosUser['apellidos'];
+    $usuario=$nombre.' '.$apellidos;
+    }
+}
+require_once 'header.php';
+
+
+?>
 <!-- Main Sidebar Container -->
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
                 <!-- Brand Logo -->
@@ -17,7 +32,7 @@
                             <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                         </div>
                         <div class="info">
-                            <a href="#" class="d-block"><?= $nombreUser ?></a>
+                            <a href="../index.php" class="d-block"><?=$usuario?></a>
                         </div>
                     </div>
 
@@ -27,7 +42,7 @@
                             <!-- Add icons to the links using the .nav-icon class
                                  with font-awesome or any other icon font library -->
                             <li class="nav-item has-treeview">
-                                <a href="ListaUsuarios.php" class="nav-link">
+                                <a href="ListaUsuarios.php?user=1" class="nav-link">
                                     <i class="nav-icon fas fa-list"></i>
                                     <p>
                                         Lista de Usuarios

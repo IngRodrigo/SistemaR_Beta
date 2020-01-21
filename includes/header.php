@@ -1,24 +1,6 @@
-<!DOCTYPE html>
 <?php
-require_once './procesos_php/Usuarios.php';
-
-if (isset($_POST['email']) && isset($_POST['password'])) {
-    $usuario = acceder($usuario, $password);
-    if (!empty($usuario)) {
-        session_start();
-        $_SESSION['logueo'] = true;
-        $nombreUser = $usuario['nombre'] . ' ' . $usuario['apellidos'];
-    } else {
-        if (isset($_SESSION['logeo'])) {
-            session_destroy();
-            header("Location: login.html");
-        } else {
-
-            header("Location: login.html");
-        }
-    }
-}
 ?>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
